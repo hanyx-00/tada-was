@@ -20,4 +20,10 @@ public interface PersonAliasRepository extends JpaRepository<PersonAlias, UUID> 
 			UUID ownerUserId,
 			Collection<UUID> personIds
 	);
+	
+	boolean existsByOwnerUserIdAndPersonIdAndAliasText(
+			UUID ownerUserId,
+			UUID personId,
+			String aliasText
+	);
 }
