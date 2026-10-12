@@ -84,13 +84,18 @@ src/main/java/com/tada/tada/
 └── curator/    # 인물 큐레이션
 ```
 
-자세한 구조와 네이밍 컨벤션은 [tada_directory_structure.md](./tada_directory_structure.md)를 참고하세요.
+인물 큐레이터의 실제 구조는 [`curator` 소스 디렉터리](./src/main/java/com/tada/tada/curator/)에서 확인할 수 있습니다.
 
-## 문서
+## 구현 및 검증 자료
 
-- [일기 작성 · AI 생성 동작 흐름](./DIARY_AI_FLOW.md)
-- [작업 순서 및 동작 흐름](./implementation_order.md)
-- [디렉토리 구조 / 컨벤션](./tada_directory_structure.md)
+다음은 현재 저장소에 있는 실제 코드·테스트 링크입니다.
+
+- [인물명 정규화: PersonNormalizer](./src/main/java/com/tada/tada/curator/service/PersonNormalizer.java)
+- [인물 매칭: PersonMatchingService](./src/main/java/com/tada/tada/curator/service/PersonMatchingService.java)
+- [인물 집계: PersonAggregateService](./src/main/java/com/tada/tada/curator/service/PersonAggregateService.java)
+- [인물 큐레이터 단위 테스트](./src/test/java/com/tada/tada/curator/)
+
+동시 저장의 독립 JDBC 재현 검증은 Spring/JPA 통합 테스트와 구별해야 합니다. 기본 `./gradlew test`에서는 외부 서비스 연동이 필요한 수동 테스트가 제외됩니다.
 
 ## 배포
 
