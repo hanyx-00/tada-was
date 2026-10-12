@@ -88,7 +88,7 @@ src/main/java/com/tada/tada/
 
 ## 구현 및 검증 자료
 
-다음은 현재 저장소에 있는 실제 코드·테스트 링크입니다.
+인물 큐레이터의 주요 구현과 테스트 코드입니다.
 
 - [인물명 정규화: PersonNormalizer](./src/main/java/com/tada/tada/curator/service/PersonNormalizer.java)
 - [인물 매칭: PersonMatchingService](./src/main/java/com/tada/tada/curator/service/PersonMatchingService.java)
