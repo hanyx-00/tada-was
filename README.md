@@ -151,7 +151,6 @@ public void handle(MentionExtractedEvent event) {
 - `memory_person` の行を `PESSIMISTIC_WRITE` で **ロックしてから** 集計の元データを読みます。読む → ロックの順だと、古い値で計算してしまいます。
 - 複数人をロックするときは **UUID の順に並べてから1件ずつ** ロックし、トランザクション同士のデッドロックを防ぎます。
 - 人物の訂正（別名の INSERT）でも同じ順序でロックします。
-- 再現検証：2つの条件 × 各50回、**100/100 回で集計が正しい** ことを確認しました。
 
 📂 [`PersonAggregateService`](./src/main/java/com/tada/tada/curator/service/PersonAggregateService.java) ・ [`MemoryPersonRepository`](./src/main/java/com/tada/tada/curator/repository/MemoryPersonRepository.java)
 
